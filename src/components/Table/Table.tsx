@@ -1,0 +1,3 @@
+import styles from './Table.module.css'
+import { Badge } from '../Badge'
+export function Table({density='default'}:{density?:'compact'|'default'}){const rows=[['12.05.2026','₽ 1 500','Пополнение','Успешно','3f8a…b21c'],['10.05.2026','₽ 890','Списание','В работе','9c2d…7e4a'],['01.05.2026','₽ 2 000','Пополнение','Ошибка','5b1e…1d09']];return <div className={`${styles.root} ${styles[density]}`}><table><thead><tr>{['Дата','Сумма','Тип','Статус','Хеш'].map(h=><th key={h}>{h}</th>)}</tr></thead><tbody>{rows.map((row,i)=><tr key={row[4]}>{row.map((cell,j)=><td key={j}>{j===3?<Badge variant={i===0?'success':i===1?'warning':'error'}>{cell}</Badge>:cell}</td>)}</tr>)}</tbody></table></div>}

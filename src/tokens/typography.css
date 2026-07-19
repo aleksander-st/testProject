@@ -1,0 +1,11 @@
+.ds-heading-4xl,.ds-heading-3xl,.ds-heading-2xl,.ds-heading-xl,.ds-heading-lg,.ds-body-base,.ds-body-sm,.ds-body-sm-medium,.ds-body-xs,.ds-label-xs { margin: 0; font-family: var(--font-sans); }
+.ds-heading-4xl { font-size: var(--size-4xl); line-height: var(--line-height-tight); font-weight: var(--weight-semibold); }
+.ds-heading-3xl { font-size: var(--size-3xl); line-height: var(--line-height-tight); font-weight: var(--weight-semibold); }
+.ds-heading-2xl { font-size: var(--size-2xl); line-height: var(--line-height-tight); font-weight: var(--weight-medium); }
+.ds-heading-xl { font-size: var(--size-xl); line-height: var(--line-height-base); font-weight: var(--weight-medium); }
+.ds-heading-lg { font-size: var(--size-lg); line-height: var(--line-height-base); font-weight: var(--weight-medium); }
+.ds-body-base { font-size: var(--size-base); line-height: var(--line-height-base); font-weight: var(--weight-regular); }
+.ds-body-sm { font-size: var(--size-sm); line-height: var(--line-height-base); font-weight: var(--weight-regular); }
+.ds-body-sm-medium { font-size: var(--size-sm); line-height: var(--line-height-base); font-weight: var(--weight-medium); }
+.ds-body-xs { font-size: var(--size-xs); line-height: var(--line-height-base); font-weight: var(--weight-regular); }
+.ds-label-xs { font-size: var(--size-xs); line-height: var(--line-height-base); font-weight: var(--weight-medium); letter-spacing: var(--tracking-wide); text-transform: uppercase; }

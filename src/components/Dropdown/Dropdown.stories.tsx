@@ -1,0 +1,10 @@
+import type { Meta,StoryObj } from '@storybook/react-vite'
+import { Dropdown } from './'
+const states=['closed','hover','open'] as const
+/** Контекстное меню действий. */
+const meta={title:'Components/Dropdown',component:Dropdown,tags:['autodocs'],args:{state:'closed'},argTypes:{state:{control:'inline-radio',options:states}},parameters:{layout:'centered'}} satisfies Meta<typeof Dropdown>
+export default meta
+type Story=StoryObj<typeof meta>
+/** Closed menu. */ export const Closed:Story={}
+/** Open menu. */ export const Open:Story={args:{state:'open'}}
+/** Все состояния. */ export const AllVariants:Story={render:()=> <div className="sb-row">{states.map(state=><Dropdown state={state} key={state}/>)}</div>}

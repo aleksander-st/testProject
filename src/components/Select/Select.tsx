@@ -1,0 +1,3 @@
+import styles from './Select.module.css'
+export interface SelectProps { label:string; state?:'default'|'hover'|'focus'|'open'|'error'; options?:string[]; errorMessage?:string }
+export function Select({label,state='default',options=['Amsterdam','Frankfurt','Warsaw'],errorMessage='Выберите значение'}:SelectProps){return <div className={`${styles.root} ${styles[state]}`}><button><span>{label}</span><i/></button>{state==='open'&&<div className={styles.panel}>{options.map((option,i)=><span className={i===0?styles.selected:''} key={option}>{option}{i===0&&<i/>}</span>)}</div>}{state==='error'&&<small>{errorMessage}</small>}</div>}

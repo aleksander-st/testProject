@@ -1,0 +1,1 @@
+.root{display:flex;gap:var(--space-2);color:var(--text-muted);font-size:var(--size-sm)}.root span{display:flex;gap:var(--space-2)}.root i{color:var(--text-disabled);font-style:normal}.root .current{color:var(--text-default);font-weight:var(--weight-medium)}
