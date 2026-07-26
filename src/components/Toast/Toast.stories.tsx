@@ -2,7 +2,7 @@ import type { Meta,StoryObj } from '@storybook/react-vite'
 import { Toast } from './'
 const variants=['success','warning','error','info'] as const
 /** Всплывающее системное уведомление. */
-const meta={title:'Components/Toast',component:Toast,tags:['autodocs'],args:{variant:'info',title:'Сервер создаётся',description:'Обычно это занимает до двух минут.'},argTypes:{variant:{control:'inline-radio',options:variants},title:{control:'text'},description:{control:'text'}},parameters:{layout:'centered'}} satisfies Meta<typeof Toast>
+const meta={title:'Components/Toast',component:Toast,tags:['autodocs'],args:{variant:'info',title:'Сервер создаётся',description:'Обычно это занимает до двух минут.'},argTypes:{variant:{control:'inline-radio',options:variants},title:{control:'text'},description:{control:'text'},onClose:{control:false}},parameters:{layout:'centered'}} satisfies Meta<typeof Toast>
 export default meta
 type Story=StoryObj<typeof meta>
 /** Informational toast. */ export const Info:Story={}

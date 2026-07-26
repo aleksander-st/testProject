@@ -1,1 +1,1 @@
-.root{display:inline-flex;align-items:center;justify-content:space-between;gap:var(--space-3);padding:var(--space-2) var(--space-1);color:var(--text-action);font-size:var(--size-sm);text-decoration:none}.root i{font-style:normal;font-size:var(--size-lg)}
+.root{display:inline-flex;align-items:center;gap:calc(var(--space-2) - var(--space-1) / 2);color:var(--text-action);font-size:var(--size-sm);font-weight:var(--weight-medium);text-decoration:none}.root i{font-style:normal;font-size:var(--size-sm)}

@@ -1,3 +1,43 @@
 import styles from './Table.module.css'
-import { Badge } from '../Badge'
-export function Table({density='default'}:{density?:'compact'|'default'}){const rows=[['12.05.2026','₽ 1 500','Пополнение','Успешно','3f8a…b21c'],['10.05.2026','₽ 890','Списание','В работе','9c2d…7e4a'],['01.05.2026','₽ 2 000','Пополнение','Ошибка','5b1e…1d09']];return <div className={`${styles.root} ${styles[density]}`}><table><thead><tr>{['Дата','Сумма','Тип','Статус','Хеш'].map(h=><th key={h}>{h}</th>)}</tr></thead><tbody>{rows.map((row,i)=><tr key={row[4]}>{row.map((cell,j)=><td key={j}>{j===3?<Badge variant={i===0?'success':i===1?'warning':'error'}>{cell}</Badge>:cell}</td>)}</tr>)}</tbody></table></div>}
+
+export type TableRow = [date: string, amount: string, type: string, status: string, hash: string]
+
+export interface TableProps {
+  density?: 'compact' | 'default'
+  rows?: TableRow[]
+  selectedHash?: string
+  onRowClick?: (row: TableRow) => void
+}
+
+const defaultRows: TableRow[] = [
+  ['12 апр', '+50.00', 'Пополнение TON', 'Зачислено', '5FHn2x...kL3M'],
+  ['01 апр', '−10.00', 'Списание (vpn-ams-01)', 'Готово', '—'],
+  ['23 мар', '+100.00', 'Пополнение TRC-20', 'Зачислено', '8HKp3w...rT9Q'],
+]
+
+export function Table({ density = 'default', rows = defaultRows, selectedHash, onRowClick }: TableProps) {
+  const activateRow = (row: TableRow) => onRowClick?.(row)
+
+  return (
+    <div className={`${styles.root} ${styles[density]}`}>
+      <table>
+        <thead><tr>{['Дата','Сумма','Тип','Статус','Хеш'].map(heading=><th key={heading}>{heading}</th>)}</tr></thead>
+        <tbody>
+          {rows.map((row, rowIndex) => (
+            <tr
+              className={`${onRowClick ? styles.selectable : ''} ${row[4] === selectedHash ? styles.selected : ''}`}
+              tabIndex={onRowClick ? 0 : undefined}
+              onClick={() => activateRow(row)}
+              onKeyDown={event => {
+                if (event.key === 'Enter' || event.key === ' ') activateRow(row)
+              }}
+              key={`${row[4]}-${rowIndex}`}
+            >
+              {row.map((cell,index)=><td key={index}>{cell}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}

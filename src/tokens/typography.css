@@ -8,4 +8,4 @@
 .ds-body-sm { font-size: var(--size-sm); line-height: var(--line-height-base); font-weight: var(--weight-regular); }
 .ds-body-sm-medium { font-size: var(--size-sm); line-height: var(--line-height-base); font-weight: var(--weight-medium); }
 .ds-body-xs { font-size: var(--size-xs); line-height: var(--line-height-base); font-weight: var(--weight-regular); }
-.ds-label-xs { font-size: var(--size-xs); line-height: var(--line-height-base); font-weight: var(--weight-medium); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
+.ds-label-xs { font-size: var(--size-xs); line-height: var(--line-height-base); font-weight: var(--weight-medium); letter-spacing: var(--tracking-wide); }
