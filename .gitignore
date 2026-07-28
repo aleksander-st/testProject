@@ -9,3 +9,4 @@ build
 *storybook.log
 storybook-static
 .tmp
+.vercel

@@ -2,7 +2,10 @@
 
 - Repository: https://github.com/aleksander-st/testProject.git
 - Branch: `main`
-- Scope: React design-system base and Storybook catalog
+- Scope: Interactive CryptoVPS prototype, React design system and Storybook
+- Live: https://cryptovps-prototype.vercel.app
+- Deployment: Vercel production from GitHub `main`
+- SPA fallback: `vercel.json`
 
 ## Local development
 
