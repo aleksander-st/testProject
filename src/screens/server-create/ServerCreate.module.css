@@ -1,0 +1,418 @@
+.page {
+  min-height: 100vh;
+  background: var(--surface-default);
+  color: var(--text-default);
+}
+
+.pageHeader,
+.body {
+  width: 100%;
+  max-width: 90rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-8);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) calc(var(--space-16) * 6 + var(--space-8));
+  align-items: start;
+  gap: var(--space-8);
+  padding: var(--space-1) var(--space-8) var(--space-8);
+}
+
+.form,
+.section,
+.sectionHeading,
+.regionCopy,
+.planCard,
+.planSpecs,
+.planPrice,
+.summary,
+.summaryItems,
+.summaryPrice,
+.forecast {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  min-width: 0;
+  gap: var(--space-8);
+}
+
+.section {
+  min-width: 0;
+  gap: var(--space-3);
+}
+
+.sectionHeading {
+  gap: var(--space-1);
+}
+
+.sectionHeading p,
+.regionCopy small,
+.planSpecs span,
+.planPrice span,
+.planPrice small,
+.summaryRow span,
+.summaryPrice span,
+.summaryPrice small,
+.forecast > p,
+.deployNote {
+  color: var(--text-muted);
+}
+
+.osGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.osCard {
+  width: 100%;
+  min-height: calc(var(--space-16) * 2 - var(--space-2) + 1px);
+}
+
+.osCard > i::after {
+  width: var(--size-lg);
+  height: var(--size-lg);
+  border-radius: var(--radius-none);
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url('./assets/linux.svg');
+}
+
+.osCard[aria-pressed='true'] > i::after {
+  background-image: url('./assets/ubuntu.svg');
+}
+
+.regionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.regionOption {
+  display: flex;
+  align-items: center;
+  min-width: calc(var(--space-16) * 2 + var(--space-12) + var(--space-1));
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-default);
+  color: var(--text-default);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.regionOption:hover:not(:disabled) {
+  border-color: var(--border-strong);
+  background: var(--surface-subtle);
+}
+
+.regionOption:disabled,
+.planCard:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.selectedRegion {
+  border-width: calc(var(--space-1) / 2);
+  border-color: var(--border-action);
+  background: var(--surface-subtle);
+}
+
+.flag {
+  font-size: var(--size-lg);
+  line-height: var(--line-height-base);
+}
+
+.regionCopy {
+  gap: calc(var(--space-1) / 2);
+}
+
+.regionCopy strong {
+  font-weight: var(--weight-medium);
+}
+
+.planGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.planCard {
+  min-width: 0;
+  min-height: calc(var(--space-16) * 4 + var(--space-6) + var(--space-1) / 2);
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-default);
+  box-shadow: var(--shadow-sm);
+  color: var(--text-default);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.planCard:hover:not(:disabled) {
+  border-color: var(--border-strong);
+  background: var(--surface-subtle);
+}
+
+.selectedPlan {
+  border-width: calc(var(--space-1) / 2);
+  border-color: var(--border-action);
+  background: var(--surface-subtle);
+}
+
+.planHeader,
+.planSpecs > div,
+.planPrice > div,
+.summaryRow,
+.summaryPrice > div,
+.forecast > span,
+.forecast > strong {
+  display: flex;
+  align-items: center;
+}
+
+.planHeader {
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: calc(var(--space-6) + var(--space-1) / 2);
+}
+
+.popular {
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--surface-action-primary);
+  color: var(--text-on-action);
+  font-size: var(--size-xs);
+  font-weight: var(--weight-medium);
+  line-height: var(--line-height-base);
+}
+
+.planSpecs {
+  gap: var(--space-2);
+}
+
+.planSpecs > div,
+.summaryRow {
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.planSpecs span {
+  font-size: var(--size-xs);
+  line-height: var(--line-height-base);
+}
+
+.planSpecs strong,
+.summaryRow strong {
+  color: var(--text-default);
+  font-size: var(--size-sm);
+  font-weight: var(--weight-medium);
+  line-height: var(--line-height-base);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border-default);
+}
+
+.planPrice {
+  gap: calc(var(--space-1) / 2);
+}
+
+.planPrice > div,
+.summaryPrice > div {
+  align-items: baseline;
+  gap: var(--space-1);
+}
+
+.planPrice strong {
+  color: var(--text-strong);
+  font-size: var(--size-2xl);
+  font-weight: var(--weight-medium);
+  line-height: var(--line-height-tight);
+}
+
+.planPrice span,
+.summaryPrice span {
+  font-size: var(--size-sm);
+  line-height: var(--line-height-base);
+}
+
+.planPrice small,
+.summaryPrice small {
+  font-size: var(--size-xs);
+  line-height: var(--line-height-base);
+}
+
+.sshRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.addKey {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-action);
+  font: inherit;
+  font-size: var(--size-sm);
+  font-weight: var(--weight-medium);
+  line-height: var(--line-height-base);
+  cursor: pointer;
+}
+
+.summary {
+  position: sticky;
+  top: var(--space-6);
+  min-width: 0;
+  gap: calc(var(--space-4) + var(--space-1));
+  padding: var(--space-6);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-default);
+  box-shadow: var(--shadow-md);
+}
+
+.summaryItems {
+  gap: var(--space-3);
+}
+
+.summaryRow {
+  align-items: baseline;
+}
+
+.summaryRow strong {
+  max-width: 62%;
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.summaryPrice {
+  gap: calc(var(--space-2) - var(--space-1) / 2);
+}
+
+.summaryPrice > div {
+  gap: calc(var(--space-2) - var(--space-1) / 2);
+}
+
+.summaryPrice strong {
+  color: var(--text-strong);
+  font-size: var(--size-3xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+.forecast {
+  gap: var(--space-2);
+}
+
+.forecast > span,
+.forecast > strong {
+  gap: var(--space-2);
+  font-size: var(--size-sm);
+  line-height: var(--line-height-base);
+}
+
+.forecast > strong {
+  font-weight: var(--weight-medium);
+}
+
+.forecast i {
+  flex: none;
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--radius-lg);
+}
+
+.successDot {
+  background: var(--bg-success);
+}
+
+.warningDot {
+  background: var(--bg-warning);
+}
+
+.createButton {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.formAlert {
+  padding: var(--space-3);
+  border: 1px solid var(--border-error);
+  border-radius: var(--radius-md);
+  background: var(--surface-error-subtle);
+  color: var(--text-error);
+  font-size: var(--size-xs);
+  line-height: var(--line-height-base);
+}
+
+@media (max-width: 72rem) {
+  .body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .summary {
+    position: static;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 56rem) {
+  .osGrid,
+  .planGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .planCard:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 48rem) {
+  .pageHeader,
+  .body {
+    padding-right: var(--space-4);
+    padding-left: var(--space-4);
+  }
+}
+
+@media (max-width: 36rem) {
+  .osGrid,
+  .planGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .planCard:last-child {
+    grid-column: auto;
+  }
+
+  .regionOption {
+    width: 100%;
+  }
+}

@@ -4,8 +4,13 @@ import './tokens/primitives.css'
 import './tokens/semantics.css'
 import './tokens/typography.css'
 import './global.css'
-import { Showcase } from './Showcase'
+import { App } from './App'
+import { PrototypeStoreProvider } from './data/PrototypeStore'
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode><Showcase /></StrictMode>,
+  <StrictMode>
+    <PrototypeStoreProvider>
+      <App />
+    </PrototypeStoreProvider>
+  </StrictMode>,
 )
